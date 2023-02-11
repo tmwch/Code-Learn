@@ -1,0 +1,39 @@
+using System;
+using System.Threading;
+
+namespace Learn
+{
+    class Program
+    {
+        static void Main()
+        {
+            int randomNums;
+            int customArrayLength;
+            int maxArrayElementValue;
+            Random random1 = new Random();
+
+            Console.WriteLine("==============================");
+            Console.WriteLine("Enter the length of the array:");
+            customArrayLength = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("------------------------------");
+            Console.WriteLine("Enter the maximum allowable array element value:");
+            maxArrayElementValue = int.Parse(Console.ReadLine());
+            Console.WriteLine("==============================");
+
+            int[] myArray = new int[customArrayLength];
+            for (int f = 0; f < myArray.Length; f++)
+            {
+                randomNums = random1.Next(maxArrayElementValue);
+                myArray[f] = randomNums;
+            }
+
+            int[] myArray2 = myArray[0..^0];
+            for (int e = 0; e < myArray2.Length; e++)
+            {
+                Console.WriteLine(myArray2[e]);
+                Thread.Sleep(60);
+            }
+        }
+    }
+}
