@@ -1,0 +1,31 @@
+using System;
+using System.Threading;
+
+namespace Learn
+{
+    class Program
+    {
+        static void Main()
+        {
+            int[,] myArray = new int[3, 3]
+            {
+                {3,1,6},
+                {2,4,9},
+                {7,8,5}
+            };
+
+            int height = myArray.GetLength(0);
+            int width = myArray.GetLength(1);
+
+            for (int h = 0; h < height; h++)
+            {
+                for (int w = 0; w < width; w++)
+                {
+                    Console.Write($"{myArray[h, w]} ");
+                }
+
+                Console.WriteLine();
+            }
+        }
+    }
+}
